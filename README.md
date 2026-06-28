@@ -175,3 +175,31 @@ Every file is real, grounded in your goal, and yours to keep.
 - `references/audit-rubric.md`, how to score each layer (Missing, Started, Solid, Compounding), the non-generic test, the prioritization precedence, and the sensitive-field and write-back checks.
 
 The references are loaded only when needed, so the controller stays lean.
+
+---
+
+## FAQ
+
+**Do I need to know how to code?**
+No. The coach does all the technical work, it creates the files and folders for you. You only answer plain-English questions and make the decisions. It assumes you have never opened a terminal.
+
+**Does my data leave my machine?**
+No. Everything it builds is plain files in the folder you ran it in. The Tools layer connects to your sources read-only and keeps secrets (passwords, keys) out of the folder. If you flag a field as sensitive, the coach stores a non-identifying handle instead of the real value, and never writes a file that claims to exclude a field and then includes it.
+
+**What does it cost or require?**
+Just Claude Code. No API keys, no dependencies, no build step. You run `/os-coach` and go.
+
+**What if a layer does not apply to me yet?**
+The coach marks it `not started` with a one-line reason rather than inventing busywork, and moves on. You are never pushed to build an agent before the skills it would orchestrate exist.
+
+**How is this different from just writing a `CLAUDE.md`?**
+A `CLAUDE.md` is only the Identity layer. OS Coach builds all six layers, keeps them coherent, and audits them against your goal over time. Identity is the soul, but the substrate, rules, skills, tools, and agents are what make the OS actually do work.
+
+**Is this only for businesses?**
+No. Any goal with a back of house works, a research practice, a job search, a household, a creative pipeline. If you have scattered knowledge and a thing you wish you could just ask, it fits.
+
+**Where does it keep track of where I am?**
+In `memory.md` in your folder. Every run reads it first and updates it last, so you can stop mid-build and pick up later, even in a new session, without losing your place.
+
+**Can I edit what it builds?**
+Yes, and you should. The files are yours. Edit them directly, then run `/os-coach audit` to see how your changes score against your goal.
