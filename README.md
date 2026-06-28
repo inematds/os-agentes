@@ -4,7 +4,11 @@ A Claude Code skill that hand-holds a non-technical person through building thei
 
 The whole thing rests on one idea: **an agentic OS is mostly plumbing. The model is the cheap 20%.** You cannot talk to your data if the back of house is a mess, so this skill builds the back of house first, then layers capability on top.
 
-![Identity to Substrate to Rules to Skills to Tools to Agents](https://img.shields.io/badge/Identity_%E2%86%92_Substrate_%E2%86%92_Rules_%E2%86%92_Skills_%E2%86%92_Tools-Agents-E07A4F?style=for-the-badge)
+<p align="center">
+  <img src="assets/os-layers.png" alt="The Agentic OS: six layers built from the ground up, Identity then Substrate then Rules then Skills then Tools then Agents" width="100%">
+</p>
+
+> Six layers, built from the ground up. Identity is the foundation, Substrate (the back of house) is the biggest layer, and Agents sit on top once everything beneath them is solid.
 
 ---
 
