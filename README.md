@@ -40,6 +40,22 @@ It builds and audits them in the order that actually works.
 
 ---
 
+## How a session flows
+
+You only ever take one small step per turn. The coach asks 2 to 3 plain-English questions, builds the real files when you answer, writes down where you are, and points you to the next layer. Everything reads and writes one shared `memory.md`, so it always knows where you left off, even sessions later. Ask for an audit any time and it scores the whole OS against your goal and feeds the result back into the cycle.
+
+<p align="center">
+  <img src="assets/coach-loop.png" alt="The coaching loop: ask, build, persist, next, all reading and writing memory.md, with audit feeding back in" width="100%">
+</p>
+
+1. **Ask** a couple of plain questions for the current layer, then stop and wait.
+2. **Build** the actual file or folder for that layer when you answer, tailored to your goal.
+3. **Persist** the decision and your place to `memory.md` so nothing is lost between turns.
+4. **Next**, move to the layer beneath or above as the build order dictates.
+5. **Audit** on demand, scoring every layer against your goal and writing `OS-AUDIT.md`, which feeds the next moves back in.
+
+---
+
 ## Commands
 
 ```

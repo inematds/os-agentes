@@ -64,6 +64,20 @@ DIAGRAMS = {
         "Title in bold hand-drawn capitals at the very top: 'THE AGENTIC OS'. "
         "The only readable text in the whole image: the title, the six layer words, and 'BUILD ORDER'. " + BAN
     ),
+    "coach-loop": (
+        "16:9",
+        STYLE + "\n\n"
+        "Subject: a schematic of a repeating coaching cycle, drawn as a clean circular flow with four labelled "
+        "stations connected by hand-drawn curved arrows moving clockwise. The four stations, clockwise from the top: "
+        "ASK (a small speech bubble holding two or three question marks), BUILD (a hand placing a small file-and-folder), "
+        "PERSIST (a small notebook with a pen writing a line in it), NEXT (a forward step arrow nudging a small stack of slabs up by one). "
+        "In the exact CENTER of the loop sits one small open notebook labelled 'memory.md' that every station connects to with thin lines, "
+        "the shared memory the cycle reads and writes. Off to the right, slightly apart from the ring, a fifth station labelled AUDIT, "
+        "drawn as a magnifying glass held over a small six-row scorecard, with a gentle dashed feedback arrow curving from AUDIT back into the ring. "
+        "Render the central 'memory.md' notebook and the four clockwise loop arrows in coral, and the AUDIT magnifier and its dashed feedback arrow in teal; everything else monochrome ink. "
+        "Title in bold hand-drawn capitals at the very top: 'ONE SMALL STEP AT A TIME'. "
+        "The only readable text in the whole image: the title, ASK, BUILD, PERSIST, NEXT, AUDIT, and memory.md. " + BAN
+    ),
 }
 
 
