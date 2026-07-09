@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>/os-coach — construa seu OS agêntico, uma camada por vez</title>
+<title>/os-agentes — construa seu OS agêntico, uma camada por vez</title>
 <meta name="description" content="Skill do Claude Code que conduz uma pessoa não técnica na construção do próprio OS agêntico de 6 camadas, uma de cada vez, com memória entre sessões e auditoria por objetivo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -92,7 +92,7 @@
 <body>
 
 <nav><div class="wrap">
-  <a class="brand" href="#top"><span class="emoji">🧭</span> /os-coach</a>
+  <a class="brand" href="#top"><span class="emoji">🧭</span> /os-agentes</a>
   <span class="sep">|</span>
   <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
   <div class="links">
@@ -102,14 +102,14 @@
     <a class="sec" href="#guia">Guia de uso</a>
     <a class="sec" href="#exemplos">Exemplo</a>
     <button class="tgl" id="themeToggle" aria-label="Alternar tema" title="Alternar tema">🌙</button>
-    <a class="btn" href="https://github.com/inematds/os-coach" target="_blank" rel="noopener">GitHub</a>
+    <a class="btn" href="https://github.com/inematds/os-agentes" target="_blank" rel="noopener">GitHub</a>
   </div>
 </div></nav>
 
 <header class="hero" id="top">
   <div class="glow"></div>
   <figure style="margin:0 auto;max-width:1120px;padding:30px 22px 0">
-    <img src="assets/os-coach-banner.png" alt="OS Coach, o Arquiteto de Sistemas de IA: você constrói a base. As seis camadas Identidade, Contexto, Regras, Skills, Tools e Agentes formando o Agentic OS, sob o lema arquitetura, lógica e estrutura. Não é sobre executar, é sobre estruturar a fundação." style="width:100%;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000">
+    <img src="assets/os-agentes-banner.png" alt="OS Agentes, o Arquiteto de Sistemas de IA: você constrói a base. As seis camadas Identidade, Contexto, Regras, Skills, Tools e Agentes formando o Agentic OS, sob o lema arquitetura, lógica e estrutura. Não é sobre executar, é sobre estruturar a fundação." style="width:100%;display:block;border-radius:16px;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000">
   </figure>
   <div class="wrap">
     <div>
@@ -118,7 +118,7 @@
       <p class="lead">Uma skill que conduz uma pessoa não técnica na construção do próprio sistema operacional agêntico, na pasta em que você rodar. Ela faz o trabalho técnico. Você toma as decisões.</p>
       <div class="cta">
         <a class="btn" href="#guia">Começar o guia</a>
-        <a class="btn ghost" href="https://github.com/inematds/os-coach" target="_blank" rel="noopener">Ver no GitHub</a>
+        <a class="btn ghost" href="https://github.com/inematds/os-agentes" target="_blank" rel="noopener">Ver no GitHub</a>
       </div>
     </div>
     <figure><img src="assets/os-layers.png" alt="As seis camadas do OS agêntico, construídas de baixo pra cima: Identidade, Substrato, Regras, Skills, Tools, Agentes"></figure>
@@ -128,7 +128,7 @@
 <section id="oque"><div class="wrap">
   <span class="chip">O que é</span>
   <h2>Um OS agêntico é, na maior parte, encanamento</h2>
-  <p class="sub">O modelo é os 20% baratos. Você não consegue conversar com seus dados se a cozinha está uma bagunça, então o /os-coach constrói a cozinha primeiro e só então empilha capacidade em cima. A pasta em que você roda <em>é</em> o OS: tudo vira arquivos reais, seus pra editar e manter.</p>
+  <p class="sub">O modelo é os 20% baratos. Você não consegue conversar com seus dados se a cozinha está uma bagunça, então o /os-agentes constrói a cozinha primeiro e só então empilha capacidade em cima. A pasta em que você roda <em>é</em> o OS: tudo vira arquivos reais, seus pra editar e manter.</p>
   <div class="grid g3">
     <div class="card"><h3>🧭 Fala como gente, não como manual</h3><p>Sem jargão. Faz o trabalho técnico por você, cria os arquivos e pastas e explica em uma frase simples o que fez e por quê. Assume que você nunca abriu um terminal.</p></div>
     <div class="card"><h3>🧠 Lembra onde você parou</h3><p>Escreve tudo em <code>memory.md</code>. Você pode parar no meio e voltar depois, até em outra sessão, sem perder o lugar. Toda rodada lê esse arquivo primeiro e o atualiza por último.</p></div>
@@ -147,7 +147,7 @@
     <span>Próxima</span><span class="arr">→</span>
     <span>Auditoria</span>
   </div>
-  <figure class="diagram"><img src="assets/coach-loop.png" alt="O loop do coach: pergunta, constrói, persiste, próxima, tudo lendo e escrevendo memory.md, com a auditoria realimentando o ciclo"></figure>
+  <figure class="diagram"><img src="assets/agentes-loop.png" alt="O loop do coach: pergunta, constrói, persiste, próxima, tudo lendo e escrevendo memory.md, com a auditoria realimentando o ciclo"></figure>
 </div></section>
 
 <section id="camadas"><div class="wrap">
@@ -165,9 +165,9 @@
 <section id="pre"><div class="wrap">
   <span class="chip">Pré-requisitos</span>
   <h2>Praticamente nada</h2>
-  <p class="sub">Sem chaves de API, sem dependências, sem build. Você roda <code>/os-coach</code> e segue.</p>
+  <p class="sub">Sem chaves de API, sem dependências, sem build. Você roda <code>/os-agentes</code> e segue.</p>
   <div class="grid g2">
-    <div class="card"><h3>Claude Code</h3><p>O OS Coach é uma skill do Claude Code. Só precisa dele instalado.</p><pre><span class="c"># instale em</span>
+    <div class="card"><h3>Claude Code</h3><p>O OS Agentes é uma skill do Claude Code. Só precisa dele instalado.</p><pre><span class="c"># instale em</span>
 <span class="s">https://claude.com/claude-code</span></pre></div>
     <div class="card"><h3>Zero dependências</h3><p>Nada mais a instalar. Tudo que ele cria são arquivos de texto simples na sua pasta.</p><pre><span class="c"># sem API keys, sem build, sem libs</span></pre></div>
   </div>
@@ -180,38 +180,38 @@
 
   <div class="step"><div class="b">1</div><div>
     <h3>Instalar a skill</h3>
-    <p>Copie a pasta <code>os-coach</code> para o diretório de skills do Claude Code.</p>
-<pre><span class="k">cp -r os-coach ~/.claude/skills/</span>  <span class="c"># instala /os-coach</span></pre>
+    <p>Copie a pasta <code>os-agentes</code> para o diretório de skills do Claude Code.</p>
+<pre><span class="k">cp -r os-agentes ~/.claude/skills/</span>  <span class="c"># instala /os-agentes</span></pre>
   </div></div>
 
   <div class="step"><div class="b">2</div><div>
     <h3>Começar um OS novo</h3>
     <p>Entre em qualquer pasta e diga seu objetivo em uma frase. Ele cria a pasta-OS, captura o objetivo nas suas palavras e começa pela Identidade.</p>
-<pre><span class="k">/os-coach start</span> Quero nunca mais perder um prazo de cliente</pre>
+<pre><span class="k">/os-agentes start</span> Quero nunca mais perder um prazo de cliente</pre>
   </div></div>
 
   <div class="step"><div class="b">3</div><div>
     <h3>Avançar uma camada por vez</h3>
     <p>Ele vai pra próxima camada não terminada, faz 2 a 3 perguntas e constrói o arquivo quando você responde.</p>
-<pre><span class="k">/os-coach next</span>  <span class="c"># coacha a próxima camada</span></pre>
+<pre><span class="k">/os-agentes next</span>  <span class="c"># coacha a próxima camada</span></pre>
   </div></div>
 
   <div class="step"><div class="b">4</div><div>
     <h3>Pular pra uma camada específica</h3>
     <p>Vá direto pra camada que você quer aprofundar.</p>
-<pre><span class="k">/os-coach layer</span> <span class="s">identity</span>  <span class="c"># ou substrate, rules, skills, tools, agents</span></pre>
+<pre><span class="k">/os-agentes layer</span> <span class="s">identity</span>  <span class="c"># ou substrate, rules, skills, tools, agents</span></pre>
   </div></div>
 
   <div class="step"><div class="b">5</div><div>
     <h3>Ver onde você está</h3>
     <p>Mostra o mapa de progresso lido do <code>memory.md</code>, sem fazer mais nada.</p>
-<pre><span class="k">/os-coach status</span></pre>
+<pre><span class="k">/os-agentes status</span></pre>
   </div></div>
 
   <div class="step"><div class="b">6</div><div>
     <h3>Auditar contra o objetivo</h3>
     <p>Pontua as 6 camadas contra o seu objetivo, dá os 3 movimentos de maior alavancagem e salva o relatório em <code>OS-AUDIT.md</code>.</p>
-<pre><span class="k">/os-coach audit</span>  <span class="c"># gera OS-AUDIT.md</span></pre>
+<pre><span class="k">/os-agentes audit</span>  <span class="c"># gera OS-AUDIT.md</span></pre>
   </div></div>
 </div></section>
 
@@ -222,12 +222,12 @@
 
   <div class="exblock">
     <div class="lbl">Você</div>
-<pre><span class="k">/os-coach start</span> Sempre perco prazos e quero nunca mais atrasar uma entrega</pre>
+<pre><span class="k">/os-agentes start</span> Sempre perco prazos e quero nunca mais atrasar uma entrega</pre>
     <p>O coach confirma o objetivo, prepara a pasta e faz 3 perguntas curtas. Você responde, e ele escreve seu <code>CLAUDE.md</code> (a Identidade) já com suas recusas: nunca mandar mensagem a um cliente sem sua aprovação, nunca deixar um prazo passar quieto.</p>
   </div>
 
   <div class="exblock">
-    <div class="lbl">/os-coach next → Substrato</div>
+    <div class="lbl">/os-agentes next → Substrato</div>
 <pre>Dentro de 3 dias, sua regra "sempre avise" disparou:
 - Casal B, galeria completa vence 2026-07-01 (faltam 3 dias)
 
@@ -237,7 +237,7 @@ Vencendo em até 10 dias:
   </div>
 
   <div class="exblock">
-    <div class="lbl">/os-coach audit</div>
+    <div class="lbl">/os-agentes audit</div>
 <pre><span class="c">## Placar</span>
 | Camada     | Nota     | Por quê |
 |------------|----------|---------|
@@ -256,15 +256,15 @@ Vencendo em até 10 dias:
 <footer>
   <div class="wrap">
     <div class="pill">Skill do Claude Code</div><div class="pill">Markdown</div><div class="pill">Zero dependências</div>
-    <p style="margin-top:18px">/os-coach · construa seu OS agêntico, uma camada por vez ·
-      <a href="https://github.com/inematds/os-coach" target="_blank" rel="noopener">github.com/inematds/os-coach</a> ·
+    <p style="margin-top:18px">/os-agentes · construa seu OS agêntico, uma camada por vez ·
+      <a href="https://github.com/inematds/os-agentes" target="_blank" rel="noopener">github.com/inematds/os-agentes</a> ·
       <a href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a></p>
   </div>
 </footer>
 
 <script>
   (function(){
-    var KEY='os-coach-theme';
+    var KEY='os-agentes-theme';
     var b=document.body, t=document.getElementById('themeToggle');
     if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
     t.addEventListener('click',function(){
