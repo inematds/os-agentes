@@ -1,80 +1,80 @@
-# Audit Rubric
+# Rubrica de Auditoria
 
-How to assess an OS so the advice is specific, honest, and tied to the person's actual goal and files. A generic audit is a failed audit.
+Como avaliar um OS de forma que o conselho seja específico, honesto, e ligado ao objetivo e aos arquivos reais da pessoa. Uma auditoria genérica é uma auditoria fracassada.
 
-## Before you score
+## Antes de pontuar
 
-1. Re-read their **goal** and **who it is for** from `memory.md`.
-2. Actually open the folder: `CLAUDE.md`, the `substrate/` + `compendium.md`, `rules/`, `skills/`, `tools.md`, `agents/`. Look at what is really there, not what memory claims.
-3. Hold every layer up against the goal. The question is never "is this a good OS in general" but "does this layer move them toward THEIR goal."
-4. **Sensitive-data check.** If `memory.md` records any field the user flagged as sensitive, scan every file for that field appearing verbatim. Any leak (or a sensitivity note that excludes a field then lists it anyway) is a hard finding: cap that layer at `Started` and make fixing it the #1 move, because a leak from a keepable file like `OS-AUDIT.md` is irreversible.
+1. Releia o **objetivo** dela e **para quem é** a partir de `memory.md`.
+2. De fato abra a pasta: `CLAUDE.md`, o `substrate/` + `compendium.md`, `rules/`, `skills/`, `tools.md`, `agents/`. Olhe o que de fato está lá, não o que a memória alega.
+3. Confronte cada camada com o objetivo. A pergunta nunca é "isso é um bom OS em geral" mas "essa camada move a pessoa em direção ao objetivo DELA."
+4. **Checagem de dado sensível.** Se `memory.md` registra algum campo que a pessoa sinalizou como sensível, escaneie todo arquivo em busca desse campo aparecendo de forma literal. Qualquer vazamento (ou uma nota de sensibilidade que exclui um campo e depois o lista mesmo assim) é um achado grave: limite essa camada a `Started` e faça o conserto ser o movimento #1, porque um vazamento vindo de um arquivo guardável como `OS-AUDIT.md` é irreversível.
 
-## Score each layer
+## Pontue cada camada
 
-Use four levels. Be honest. Most early OSes are mostly Missing or Started, and that is fine.
+Use quatro níveis. Seja honesto. A maioria dos OSes recentes está majoritariamente Missing ou Started, e tudo bem.
 
-- **Missing** - not there, or empty placeholder.
-- **Started** - exists but thin, generic, not yet tied to the goal, or it answers only part of what the goal needs (for example a tracker that shows what is due soon but cannot yet say what is already late).
-- **Solid** - real, specific, and passes the layer's full done-check (it answers every part of the user's hard question with the data on hand, not just the easy half).
-- **Compounding** - solid AND it gets better over time on its own (the substrate grows, skills are versioned, audits feed back in).
+- **Missing** - não existe, ou é um placeholder vazio.
+- **Started** - existe mas é raso, genérico, ainda não ligado ao objetivo, ou responde só parte do que o objetivo precisa (por exemplo um rastreador que mostra o que vence em breve mas ainda não consegue dizer o que já está atrasado).
+- **Solid** - real, específico, e passa a checagem de pronto completa da camada (responde cada parte da pergunta difícil da pessoa com os dados disponíveis, não só a metade fácil).
+- **Compounding** - solid E melhora sozinho com o tempo (o substrato cresce, as skills são versionadas, as auditorias realimentam o ciclo).
 
-## The non-generic test
+## O teste do não-genérico
 
-Every line you write must fail if pasted into a stranger's audit. If a sentence would be true for any OS, rewrite it with their specifics.
+Toda linha que você escrever precisa falhar se for colada na auditoria de um estranho. Se uma frase seria verdadeira para qualquer OS, reescreva-a com as especificidades dela.
 
-- Generic (banned): "Add more documentation to your substrate."
-- Specific (required): "Your goal is winning back churned subscribers, but `substrate/` only has `sources.md` and an empty `compendium.md`. The highest-leverage move is to pull your last 90 days of cancellation messages into `substrate/churn/` and distill the three most common reasons into `compendium.md`."
+- Genérico (banido): "Adicione mais documentação ao seu substrato."
+- Específico (exigido): "Seu objetivo é reconquistar assinantes que cancelaram, mas `substrate/` só tem `sources.md` e um `compendium.md` vazio. O movimento de maior alavancagem é puxar as mensagens de cancelamento dos últimos 90 dias para `substrate/churn/` e destilar os três motivos mais comuns em `compendium.md`."
 
-Quote real file names, real gaps, and the real goal in every recommendation.
+Cite nomes reais de arquivos, lacunas reais, e o objetivo real em cada recomendação.
 
-## Output format
+## Formato de saída
 
-Write the audit exactly like this (also saved to `OS-AUDIT.md`):
+Escreva a auditoria exatamente assim (também salva em `OS-AUDIT.md`):
 
 ```
-# OS Audit - <YYYY-MM-DD>
-Goal: <their goal>
+# Auditoria do OS - <YYYY-MM-DD>
+Objetivo: <objetivo dela>
 
-## Scorecard
-| Layer      | Score       | Why (one specific line) |
-|------------|-------------|--------------------------|
-| Identity   | Solid       | ... |
-| Substrate  | Started     | ... |
-| Rules      | Missing     | ... |
-| Skills     | Started     | ... |
-| Tools      | Missing     | ... |
-| Agents     | Missing     | ... |
+## Boletim
+| Camada      | Nota        | Por quê (uma linha específica) |
+|-------------|-------------|--------------------------|
+| Identidade  | Solid       | ... |
+| Substrato   | Started     | ... |
+| Regras      | Missing     | ... |
+| Skills      | Started     | ... |
+| Ferramentas | Missing     | ... |
+| Agentes     | Missing     | ... |
 
-## The three moves that matter most (in order)
-1. <layer> - <exactly what to do, tied to the goal and a real file> - <why it is highest leverage right now>
+## Os três movimentos que mais importam (em ordem)
+1. <camada> - <exatamente o que fazer, ligado ao objetivo e a um arquivo real> - <por que é a maior alavancagem agora>
 2. ...
 3. ...
 
-## What is already working
-- <one or two genuine strengths, specific>
+## O que já está funcionando
+- <um ou dois pontos fortes genuínos, específicos>
 
-## The one thing to do next
-<a single, concrete first action they can take today>
+## A única coisa a fazer agora
+<uma única ação concreta que ela pode tomar hoje>
 ```
 
-## Prioritization logic
+## Lógica de priorização
 
-Rank the three moves by leverage toward the goal, not by layer order. Apply in this precedence (top rule wins when two compete):
+Ordene os três movimentos por alavancagem em direção ao objetivo, não pela ordem das camadas. Aplique nesta precedência (a regra de cima vence quando duas competem):
 
-1. **A missing hard rule takes #1 ONLY if the worst-case mistake is imminent or irreversible** (money could move wrong, private data could leak, a hard deadline is close). Otherwise it ranks below substrate.
-2. **Otherwise, substrate gaps win.** If the back of house is thin, everything else is built on sand. Fix data and context first.
-3. **Skills only matter once the substrate can feed them.** Do not push skills if there is nothing for them to read.
-4. **Agents are last.** Never recommend an agent before the skills it would orchestrate exist.
+1. **Uma regra dura faltando só vira #1 SE o pior erro possível for iminente ou irreversível** (dinheiro poderia se mover errado, dado privado poderia vazar, um prazo duro está perto). Caso contrário, fica abaixo do substrato.
+2. **Do contrário, lacunas de substrato vencem.** Se os bastidores estão rasos, tudo o mais é construído sobre areia. Conserte dado e contexto primeiro.
+3. **Skills só importam quando o substrato consegue alimentá-las.** Não empurre skills se não há nada para elas lerem.
+4. **Agentes vêm por último.** Nunca recomende um agente antes de existirem as skills que ele orquestraria.
 
-## Writing the result back to memory
+## Escrevendo o resultado de volta na memória
 
-After the audit, refresh `memory.md`: append the dated headline to `audit_log`, re-stamp `Updated` with today's date, and rewrite the Layer status block from your scores using this mapping:
+Depois da auditoria, atualize `memory.md`: anexe a manchete datada em `audit_log`, recarimbe `Updated` com a data de hoje, e reescreva o bloco de status das camadas a partir das suas notas usando este mapeamento:
 
 - Missing -> `not started`
 - Started -> `in progress`
 - Solid -> `solid`
-- Compounding -> `solid` (add the word "compounding" in the note)
+- Compounding -> `solid` (adicione a palavra "compounding" na nota)
 
-## Tone
+## Tom
 
-Encouraging and direct. Name what is genuinely good before what is missing. Never shame an empty layer. Frame everything as the next concrete step, not a grade.
+Encorajador e direto. Nomeie o que já é genuinamente bom antes do que está faltando. Nunca envergonhe uma camada vazia. Trate tudo como o próximo passo concreto, não como uma nota.

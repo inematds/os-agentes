@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Schematic diagrams for the /os-coach README.
+"""Schematic diagrams for the /os-agentes README.
 
 Editorial blueprint style: warm off-white paper, hand-drawn pen line work,
 coral (#E07A4F) and teal (#2A9D8F) accents. Minimal text so labels render
@@ -64,7 +64,7 @@ DIAGRAMS = {
         "Title in bold hand-drawn capitals at the very top: 'THE AGENTIC OS'. "
         "The only readable text in the whole image: the title, the six layer words, and 'BUILD ORDER'. " + BAN
     ),
-    "coach-loop": (
+    "agentes-loop": (
         "16:9",
         STYLE + "\n\n"
         "Subject: a schematic of a repeating coaching cycle, drawn as a clean circular flow with four labelled "

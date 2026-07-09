@@ -1,134 +1,134 @@
-# Layer Playbook
+# Guia de Camadas
 
-How to coach each layer for a non-technical person. For each layer you get: what it is in plain words, an analogy, the questions to ask them, the artifact you build for them, the done-check, and the common mistake to steer them off.
+Como treinar cada camada para uma pessoa não técnica. Para cada camada você tem: o que é em palavras simples, uma analogia, as perguntas a fazer, o artefato que você constrói, a checagem de pronto, e o erro comum a evitar.
 
-Always tailor the artifact to **their goal** from `memory.md`. Build the file/folder for them, then explain it in one short paragraph.
-
----
-
-## 1. Identity - the soul
-
-**Plain words:** A short note that tells the OS who it is, who it helps, and what it must never do. Everything else follows from this.
-
-**Analogy:** The job description and personality you would give a brand-new assistant on day one.
-
-**Ask them (pick 2-3):**
-- In one sentence, what is this OS for?
-- Who does it serve: just you, your team, or your clients?
-- What is one thing it should always do, and one thing it should never do?
-
-**You build:** `CLAUDE.md` in this folder. Keep it lean (aim for under 30 lines). Include: who it is, who it serves, the goal, 2-3 defaults (how it should behave), and 2-3 hard refusals. Write it in their voice, grounded in their answers.
-
-**Done-check:** A stranger could read `CLAUDE.md` and correctly describe what this OS is for and one thing it will refuse to do.
-
-**Common mistake:** Making it long and generic. Cut until it hurts. A bloated identity confuses the OS.
+Sempre adapte o artefato ao **objetivo dela** a partir de `memory.md`. Construa o arquivo/pasta para ela, então explique em um parágrafo curto.
 
 ---
 
-## 2. Substrate / Context - the back of house
+## 1. Identidade - a alma
 
-**Plain words:** All the real knowledge the OS runs on, gathered in one place and trimmed down so it is easy to use. This is the biggest layer and the one most people skip.
+**Palavras simples:** Uma nota curta que diz ao OS quem ele é, a quem ele ajuda, e o que ele nunca deve fazer. Tudo o mais parte daqui.
 
-**Analogy:** You cannot cook a great meal in a kitchen full of spoiled food and unlabelled jars. Clean the back of house first.
+**Analogia:** A descrição de cargo e a personalidade que você daria a um assistente novo no primeiro dia.
 
-**Ask them (pick 2-3):**
-- What sources hold the knowledge this OS needs (documents, past work, websites, experts you trust)?
-- If you could ask this OS one hard question and get a great answer, what would it be? (This tells us what to gather.)
-- Is any of this private or sensitive? (So we keep it out of anything shared.)
+**Pergunte (escolha 2-3):**
+- Em uma frase, para que serve este OS?
+- A quem ele serve: só você, seu time, ou seus clientes?
+- Qual é uma coisa que ele deve sempre fazer, e uma que ele nunca deve fazer?
 
-**You build:** a `substrate/` folder and a plan to fill it. Use these canonical paths (so audits can find them):
-- `substrate/sources.md` listing where the raw material will come from,
-- `substrate/compendium.md` (the distilled reference the OS will actually read),
-- if useful, `substrate/subject-matter-expertise/` with one subfolder per source.
-Offer to actually harvest and distill if they have the material ready. Note in `memory.md` what still needs gathering.
+**Você constrói:** `CLAUDE.md` nesta pasta. Mantenha enxuto (mire abaixo de 30 linhas). Inclua: quem ele é, a quem serve, o objetivo, 2-3 padrões (como deve se comportar), e 2-3 recusas inegociáveis. Escreva na voz dela, ancorado nas respostas dela.
 
-**De-identify what they flagged.** If they named any field as sensitive (often the very names or amounts you are tempted to write into the tracker), do not write those values into `substrate/`, `memory.md`, or anywhere else in the folder. Use a stable non-identifying handle instead (initials, "Couple A", "Client 1") and keep the real-value mapping out of the folder. Never write a sensitivity note that says a field is excluded and then list that field anyway, that contradiction is itself a leak. If a handle would make the OS unusable for them, ask before writing real values rather than deciding for them.
+**Checagem de pronto:** Um estranho conseguiria ler `CLAUDE.md` e descrever corretamente para que serve este OS e uma coisa que ele vai recusar a fazer.
 
-**Done-check:** `substrate/compendium.md` exists, is organized rather than a pile, and can answer **every part** of the hard question above with the data actually on hand. If the question has more than one part (for example "what is due soon AND what am I already late on") and a required input is still missing, the layer is `in progress`, not `solid`. Say plainly which part it cannot yet answer and what input would fix it.
-
-**Common mistake:** Trying to dump everything in raw. Distill. A small, clean compendium beats a giant messy one.
+**Erro comum:** Deixar longo e genérico. Corte até doer. Uma identidade inchada confunde o OS.
 
 ---
 
-## 3. Rules & Hooks - the guardrails
+## 2. Substrato / Contexto - os bastidores
 
-**Plain words:** The black-and-white lines the OS must never cross, plus a few automatic reflexes that enforce them without anyone remembering to.
+**Palavras simples:** Todo o conhecimento real em que o OS roda, reunido num só lugar e enxugado para ser fácil de usar. Esta é a maior camada e a que mais gente pula.
 
-**Analogy:** A rule is a sign that says "do not enter". A hook is a locked door that physically cannot open. Hooks are stronger.
+**Analogia:** Você não cozinha uma boa refeição numa cozinha cheia de comida estragada e potes sem etiqueta. Arrume os bastidores primeiro.
 
-**Ask them (pick 2-3):**
-- What is the worst mistake this OS could make? (That becomes a hard rule.)
-- Is there anything that should happen automatically every time (a reminder, a check, a backup)?
-- Any private data that must never leave this folder or get shared?
+**Pergunte (escolha 2-3):**
+- Quais fontes guardam o conhecimento de que este OS precisa (documentos, trabalhos passados, sites, especialistas em quem você confia)?
+- Se você pudesse fazer uma pergunta difícil a este OS e receber uma ótima resposta, qual seria? (Isso diz o que reunir.)
+- Alguma coisa disso é privada ou sensível? (Para mantermos fora de qualquer coisa compartilhada.)
 
-**You build:** a `rules/` folder with `always.md` (constraints it must follow) and `never.md` (hard stops), written from their answers. If they named an automatic behavior, note it as a hook to add later and describe what it would guard. If they have private data, add a "never commit or share" rule.
+**Você constrói:** uma pasta `substrate/` e um plano para preenchê-la. Use estes caminhos canônicos (para que as auditorias consigam achar):
+- `substrate/sources.md` listando de onde o material bruto vai vir,
+- `substrate/compendium.md` (a referência destilada que o OS vai de fato ler),
+- se útil, `substrate/subject-matter-expertise/` com uma subpasta por fonte.
+Ofereça-se para de fato colher e destilar se ela já tiver o material pronto. Anote em `memory.md` o que ainda falta reunir.
 
-**Done-check:** The worst-mistake answer is written as a clear never-rule, and at least one automatic reflex is identified.
+**Desidentifique o que ela sinalizou.** Se ela nomeou algum campo como sensível (muitas vezes os próprios nomes ou valores que você fica tentado a escrever no rastreador), não escreva esses valores em `substrate/`, `memory.md`, ou em qualquer outro lugar da pasta. Use uma referência estável que não identifica (iniciais, "Casal A", "Cliente 1") e mantenha o mapeamento para o valor real fora da pasta. Nunca escreva uma nota de sensibilidade que diz que um campo está excluído e depois liste esse campo mesmo assim, essa contradição já é um vazamento. Se uma referência tornasse o OS inutilizável para ela, pergunte antes de escrever valores reais em vez de decidir por ela.
 
-**Common mistake:** Vague rules ("be careful"). Make them concrete and testable ("never blend two clients' numbers").
+**Checagem de pronto:** `substrate/compendium.md` existe, está organizado em vez de ser uma pilha, e consegue responder **cada parte** da pergunta difícil acima com os dados disponíveis. Se a pergunta tiver mais de uma parte (por exemplo "o que vence em breve E o que eu já estou atrasada") e um dado necessário ainda estiver faltando, a camada está `in progress`, não `solid`. Diga claramente qual parte ela ainda não consegue responder e qual dado resolveria isso.
 
----
-
-## 4. Skills - the earned verbs
-
-**Plain words:** The repeatable jobs this OS does, written down so they happen the same way every time. You earn a skill by doing the job by hand a few times first, then capturing the steps.
-
-**Analogy:** A recipe card. The first few times you cook by feel, then you write the recipe so anyone can repeat it.
-
-**Ask them (pick 2-3):**
-- What is a task you find yourself repeating that you wish ran the same way every time?
-- Walk me through how you do it by hand, step by step.
-- How do you know when it is done well?
-
-**You build:** a `skills/` folder, and one subfolder per skill with a simple `SKILL.md` capturing: when to use it, the steps, and what good looks like. Start with ONE skill, their most-repeated job. Tell them a skill is never finished; they will keep improving it.
-
-**Done-check:** One real, repeated job is written as a skill with clear steps and a "what good looks like" line.
-
-**Common mistake:** Trying to write ten skills at once, or writing a skill for something they have never actually done by hand. Earn it first.
+**Erro comum:** Tentar despejar tudo cru. Destile. Um compêndio pequeno e limpo vale mais que um gigante bagunçado.
 
 ---
 
-## 5. Tools / Connections - the wires out
+## 3. Regras & Hooks - as cercas
 
-**Plain words:** How the OS safely reaches real data sources (a bank, a calendar, a spreadsheet, a website). Read-only by default, with nothing secret stored in the folder.
+**Palavras simples:** As linhas preto-no-branco que o OS nunca deve cruzar, mais alguns reflexos automáticos que as reforçam sem que ninguém precise lembrar.
 
-**Analogy:** A window the OS can look through, not a key to the whole house. It can read, but it cannot rummage.
+**Analogia:** Uma regra é uma placa que diz "não entre". Um hook é uma porta trancada que fisicamente não consegue abrir. Hooks são mais fortes.
 
-**Ask them (pick 2-3):**
-- What outside sources does this OS need to read from to hit your goal?
-- For each one, does it only need to look (read), or also to change things (write)?
-- Are there secrets involved (passwords, keys)? (Those never go in this folder.)
+**Pergunte (escolha 2-3):**
+- Qual é o pior erro que este OS poderia cometer? (Isso vira uma regra dura.)
+- Existe algo que deveria acontecer automaticamente toda vez (um lembrete, uma checagem, um backup)?
+- Algum dado privado que nunca deve sair desta pasta ou ser compartilhado?
 
-**You build:** a `tools.md` that lists each connection, what it is for, and read-only versus write, plus a one-line "how to wire it later" note. For each source, help them decide the simplest path: a ready-made skill, a small command-line wrapper, or an existing connector. Keep all secrets out of the folder.
+**Você constrói:** uma pasta `rules/` com `always.md` (restrições que ele deve seguir) e `never.md` (paradas duras), escritas a partir das respostas dela. Se ela nomeou um comportamento automático, anote como um hook a adicionar depois e descreva o que ele guardaria. Se ela tem dados privados, adicione uma regra "nunca commitar ou compartilhar".
 
-**Done-check:** Every source the goal needs is listed with its access level, and no secrets live in the folder.
+**Checagem de pronto:** A resposta do pior-erro está escrita como uma regra-nunca clara, e pelo menos um reflexo automático foi identificado.
 
-**Common mistake:** Wiring write-access everywhere. Default to read-only. Add write only where it is truly needed.
-
----
-
-## 6. Agents - roles with judgment
-
-**Plain words:** A skill is a single verb. An agent is a worker with a role who decides which skills to use and in what order, then runs a check before anything goes out.
-
-**Analogy:** Skills are kitchen tools. An agent is the chef who knows which tool to grab and tastes the dish before it leaves the kitchen.
-
-**Ask them (pick 2-3):**
-- Is there a recurring routine where you find yourself stringing several of your skills together by hand?
-- What would a trustworthy "manager" of this OS check before letting work go out?
-- Should each piece of work be kept separate (for example, one client at a time)?
-
-**You build:** an `agents/` folder with one `AGENT.md` for the first role worth promoting: its job, which skills it orchestrates, and the mandatory review step before output ships. Only create an agent for a routine they actually do by hand today.
-
-**Done-check:** One real orchestrated routine is captured as an agent with a clear review gate.
-
-**Common mistake:** Building agents before skills exist, or building a "do everything" agent. One agent, one clear role.
+**Erro comum:** Regras vagas ("tenha cuidado"). Deixe-as concretas e testáveis ("nunca misturar os números de dois clientes").
 
 ---
 
-## Coaching tips that apply to every layer
+## 4. Skills - os verbos conquistados
 
-- Celebrate each completed layer briefly, then point to the next.
-- If they are stuck, give them a concrete example from their own goal, not a textbook one.
-- If a layer does not apply to their goal yet, say so honestly and mark it `not started` with a note, rather than inventing work.
-- Keep the folder tidy as you go. The folder IS the OS.
+**Palavras simples:** Os trabalhos repetíveis que este OS faz, escritos de forma que aconteçam sempre do mesmo jeito. Você conquista uma skill fazendo o trabalho na mão algumas vezes primeiro, depois capturando os passos.
+
+**Analogia:** Um cartão de receita. Nas primeiras vezes você cozinha no feeling, depois escreve a receita para que qualquer um consiga repetir.
+
+**Pergunte (escolha 2-3):**
+- Qual é uma tarefa que você se pega repetindo e gostaria que rodasse sempre igual?
+- Me guie por como você faz na mão, passo a passo.
+- Como você sabe que ficou bem feito?
+
+**Você constrói:** uma pasta `skills/`, e uma subpasta por skill com um `SKILL.md` simples capturando: quando usar, os passos, e como é "bem feito". Comece com UMA skill, o trabalho mais repetido dela. Diga a ela que uma skill nunca está terminada; ela vai continuar melhorando.
+
+**Checagem de pronto:** Um trabalho real e repetido está escrito como skill com passos claros e uma linha de "como é bem feito".
+
+**Erro comum:** Tentar escrever dez skills de uma vez, ou escrever uma skill para algo que ela nunca fez de verdade na mão. Conquiste primeiro.
+
+---
+
+## 5. Ferramentas / Conexões - os fios pra fora
+
+**Palavras simples:** Como o OS alcança com segurança fontes de dados reais (um banco, uma agenda, uma planilha, um site). Somente-leitura por padrão, sem nada secreto guardado na pasta.
+
+**Analogia:** Uma janela pela qual o OS consegue olhar, não uma chave da casa inteira. Ele pode ler, mas não pode remexer.
+
+**Pergunte (escolha 2-3):**
+- De quais fontes externas este OS precisa ler para bater o seu objetivo?
+- Para cada uma, ele só precisa olhar (ler), ou também mudar coisas (escrever)?
+- Há segredos envolvidos (senhas, chaves)? (Esses nunca vão nesta pasta.)
+
+**Você constrói:** um `tools.md` que lista cada conexão, para que ela serve, e se é somente-leitura ou escrita, mais uma nota de uma linha de "como conectar depois". Para cada fonte, ajude-a a decidir o caminho mais simples: uma skill pronta, um pequeno wrapper de linha de comando, ou um conector já existente. Mantenha todos os segredos fora da pasta.
+
+**Checagem de pronto:** Toda fonte que o objetivo precisa está listada com seu nível de acesso, e nenhum segredo mora na pasta.
+
+**Erro comum:** Ligar acesso de escrita em tudo. O padrão é somente-leitura. Adicione escrita só onde for realmente necessário.
+
+---
+
+## 6. Agentes - papéis com julgamento
+
+**Palavras simples:** Uma skill é um único verbo. Um agente é um trabalhador com um papel que decide quais skills usar e em que ordem, e então roda uma checagem antes de qualquer coisa sair.
+
+**Analogia:** Skills são ferramentas de cozinha. Um agente é o chef que sabe qual ferramenta pegar e prova o prato antes de ele sair da cozinha.
+
+**Pergunte (escolha 2-3):**
+- Existe uma rotina recorrente em que você se pega encadeando várias das suas skills na mão?
+- O que um "gerente" confiável deste OS checaria antes de deixar o trabalho sair?
+- Cada trabalho deveria ser mantido separado (por exemplo, um cliente de cada vez)?
+
+**Você constrói:** uma pasta `agents/` com um `AGENT.md` para o primeiro papel que vale promover: seu trabalho, quais skills ele orquestra, e o passo obrigatório de revisão antes do resultado sair. Só crie um agente para uma rotina que ela de fato faz na mão hoje.
+
+**Checagem de pronto:** Uma rotina orquestrada real está capturada como um agente com um portão de revisão claro.
+
+**Erro comum:** Construir agentes antes de existirem skills, ou construir um agente "faz tudo". Um agente, um papel claro.
+
+---
+
+## Dicas de treino que valem para toda camada
+
+- Comemore cada camada concluída rapidamente, então aponte para a próxima.
+- Se ela travar, dê um exemplo concreto a partir do próprio objetivo dela, não um exemplo de livro-texto.
+- Se uma camada ainda não se aplica ao objetivo dela, diga isso com honestidade e marque como `not started` com uma nota, em vez de inventar trabalho.
+- Mantenha a pasta arrumada conforme avança. A pasta É o OS.

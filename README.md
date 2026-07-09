@@ -1,12 +1,10 @@
-<p align="right"><b>🇧🇷 Português</b> · <a href="README.en.md">🇺🇸 English</a></p>
-
 <p align="center">
-  <img src="assets/os-coach-banner.png" alt="OS Coach, o Arquiteto de Sistemas de IA: você constrói a base. As seis camadas Identidade, Contexto, Regras, Skills, Tools e Agentes formando o Agentic OS, sob o lema arquitetura, lógica e estrutura. Não é sobre executar, é sobre estruturar a fundação." width="100%">
+  <img src="assets/os-agentes-banner.png" alt="OS Agentes, o Arquiteto de Sistemas de IA: você constrói a base. As seis camadas Identidade, Contexto, Regras, Skills, Tools e Agentes formando o Agentic OS, sob o lema arquitetura, lógica e estrutura. Não é sobre executar, é sobre estruturar a fundação." width="100%">
 </p>
 
-# /os-coach
+# /os-agentes
 
-📘 **Guia visual (landing + passo a passo):** [inematds.github.io/os-coach](https://inematds.github.io/os-coach/)
+📘 **Guia visual (landing + passo a passo):** [inematds.github.io/os-agentes](https://inematds.github.io/os-agentes/)
 
 > **O que é isto, em uma frase:** uma skill do Claude Code que pega na sua mão e te guia, passo a passo, na construção do seu próprio **OS agêntico** (um sistema operacional feito de arquivos, que entende o seu objetivo e trabalha por você), uma camada de cada vez, dentro de qualquer pasta. Você não precisa saber programar. A skill faz o trabalho técnico. Você só toma as decisões.
 
@@ -24,7 +22,7 @@ Tudo se apoia numa única ideia: **um OS agêntico é, na maior parte, encanamen
 
 ## O que ela faz
 
-Você roda `/os-coach` dentro de qualquer pasta e diz qual é o seu objetivo. A skill:
+Você roda `/os-agentes` dentro de qualquer pasta e diz qual é o seu objetivo. A skill:
 
 1. **Inicia um OS de verdade** naquela pasta, registra o seu objetivo com as suas próprias palavras, e lembra exatamente onde você está entre as sessões, num arquivo `memory.md`.
 2. **Treina uma camada de cada vez.** Faz 2 ou 3 perguntas em português simples, espera a sua resposta, então constrói os arquivos e pastas de verdade para você e explica o que criou e por quê.
@@ -55,7 +53,7 @@ Ela constrói e audita as camadas na ordem que realmente funciona.
 Você dá sempre só um pequeno passo por vez. O treinador faz 2 ou 3 perguntas em português claro, constrói os arquivos de verdade quando você responde, anota onde você está, e te aponta a próxima camada. Tudo lê e escreve num mesmo `memory.md`, então ele sempre sabe de onde você parou, mesmo sessões depois. Peça uma auditoria a qualquer momento e ele pontua o OS inteiro em relação ao seu objetivo e devolve o resultado para dentro do ciclo.
 
 <p align="center">
-  <img src="assets/coach-loop.png" alt="O loop de treino: perguntar, construir, persistir, próximo, todos lendo e escrevendo no memory.md, com a auditoria realimentando o ciclo" width="100%">
+  <img src="assets/agentes-loop.png" alt="O loop de treino: perguntar, construir, persistir, próximo, todos lendo e escrevendo no memory.md, com a auditoria realimentando o ciclo" width="100%">
 </p>
 
 1. **Pergunta** algumas perguntas simples sobre a camada atual, então para e espera.
@@ -69,12 +67,12 @@ Você dá sempre só um pequeno passo por vez. O treinador faz 2 ou 3 perguntas 
 ## Comandos
 
 ```
-/os-coach start <seu objetivo>   Começa um OS novinho em folha
-/os-coach next                   Vai para a próxima camada não terminada e treina ela
-/os-coach layer <nome>           Pula para uma camada específica (identity, substrate, rules, skills, tools, agents)
-/os-coach status                 Mostra o mapa de progresso a partir da memória
-/os-coach audit                  Pontua o OS inteiro em relação ao seu objetivo e te dá os próximos passos
-/os-coach help                   Explica o que ela faz e mostra os comandos
+/os-agentes start <seu objetivo>   Começa um OS novinho em folha
+/os-agentes next                   Vai para a próxima camada não terminada e treina ela
+/os-agentes layer <nome>           Pula para uma camada específica (identity, substrate, rules, skills, tools, agents)
+/os-agentes status                 Mostra o mapa de progresso a partir da memória
+/os-agentes audit                  Pontua o OS inteiro em relação ao seu objetivo e te dá os próximos passos
+/os-agentes help                   Explica o que ela faz e mostra os comandos
 ```
 
 ---
@@ -82,13 +80,13 @@ Você dá sempre só um pequeno passo por vez. O treinador faz 2 ou 3 perguntas 
 ## Instalação
 
 ```bash
-cp -r os-coach ~/.claude/skills/
+cp -r os-agentes ~/.claude/skills/
 ```
 
 Depois, dentro de qualquer pasta que você queira transformar num OS:
 
 ```
-/os-coach start Quero nunca mais perder o prazo de um cliente
+/os-agentes start Quero nunca mais perder o prazo de um cliente
 ```
 
 ### Pré-requisitos
@@ -120,10 +118,10 @@ Aqui está uma execução real, condensada. Uma fotógrafa de casamento autônom
 **Você:**
 
 ```
-/os-coach start Eu vivo perdendo prazos de cliente e quero nunca mais atrasar uma entrega
+/os-agentes start Eu vivo perdendo prazos de cliente e quero nunca mais atrasar uma entrega
 ```
 
-O OS Coach confirma o objetivo, prepara a pasta, e faz três perguntas curtas: para quem isto é, a única pergunta que você gostaria de poder simplesmente fazer a ele, e uma coisa que ele deve sempre fazer mais uma que ele nunca deve fazer. Você responde: só eu; "o que vence nos próximos 10 dias e do que eu já estou atrasada"; sempre me avise dentro de 3 dias de uma data contratada; nunca mande mensagem para um cliente sem a minha aprovação. Ele então escreve o seu arquivo de Identidade:
+O OS Agentes confirma o objetivo, prepara a pasta, e faz três perguntas curtas: para quem isto é, a única pergunta que você gostaria de poder simplesmente fazer a ele, e uma coisa que ele deve sempre fazer mais uma que ele nunca deve fazer. Você responde: só eu; "o que vence nos próximos 10 dias e do que eu já estou atrasada"; sempre me avise dentro de 3 dias de uma data contratada; nunca mande mensagem para um cliente sem a minha aprovação. Ele então escreve o seu arquivo de Identidade:
 
 ```markdown
 # Quem eu sou
@@ -134,7 +132,7 @@ Eu sou o sistema operacional de uma fotógrafa de casamento autônoma. Eu existo
 - Eu nunca deixo um prazo passar em silêncio. Se algo está em risco, eu levanto a bandeira alto.
 ```
 
-**Você:** `/os-coach next`
+**Você:** `/os-agentes next`
 
 Ele abre o Substrato, pergunta onde moram os seus agendamentos e o que é sensível, então constrói um rastreador que calcula os dois prazos a partir da data de cada casamento (a prévia é casamento mais 1 semana, a galeria completa é casamento mais 6 semanas) e responde a sua pergunta na hora:
 
@@ -146,7 +144,7 @@ Vencendo dentro de 10 dias:
 - Casal C, prévia vence em 2026-07-02 (faltam 4 dias)
 ```
 
-**Você:** `/os-coach audit`
+**Você:** `/os-agentes audit`
 
 ```
 ## Boletim
@@ -188,17 +186,17 @@ As referências são carregadas só quando necessário, então o controlador fic
 
 ---
 
-## OS Coach × OpenClaw: você constrói a base, ele roda o agente
+## OS Agentes × OpenClaw: você constrói a base, ele roda o agente
 
-O OS Coach **não executa** tarefas por você no dia a dia. Ele **estrutura a fundação**: Identidade, Substrato, Regras, Skills, Ferramentas e Agentes, a arquitetura sobre a qual um agente confiável consegue rodar. **Primeiro você constrói a base; só depois um agente entra em execução em cima dela.**
+O OS Agentes **não executa** tarefas por você no dia a dia. Ele **estrutura a fundação**: Identidade, Substrato, Regras, Skills, Ferramentas e Agentes, a arquitetura sobre a qual um agente confiável consegue rodar. **Primeiro você constrói a base; só depois um agente entra em execução em cima dela.**
 
-É aí que entra uma plataforma de execução como o **OpenClaw** (o "Jarvis" que roda os agentes): ela pega a base que você preparou aqui e a coloca para trabalhar, mensagens (WhatsApp, Telegram, e-mail), automações, ferramentas e dashboards. **O OS Coach prepara a base; o OpenClaw roda o agente.**
+É aí que entra uma plataforma de execução como o **OpenClaw** (o "Jarvis" que roda os agentes): ela pega a base que você preparou aqui e a coloca para trabalhar, mensagens (WhatsApp, Telegram, e-mail), automações, ferramentas e dashboards. **O OS Agentes prepara a base; o OpenClaw roda o agente.**
 
 <p align="center">
-  <img src="assets/os-coach-vs-openclaw.png" alt="OS Coach versus OpenClaw: à esquerda o OS Coach constrói a base (arquitetura, lógica e estrutura: Identidade, Contexto, Regras, Skills, Tools, Agentes, formando o Agentic OS); à direita o OpenClaw roda o agente em execução (mensagens, automações, ferramentas e dashboards, monitorando, tomando ações, aprendendo e entregando resultados)" width="100%">
+  <img src="assets/os-agentes-vs-openclaw.png" alt="OS Agentes versus OpenClaw: à esquerda o OS Agentes constrói a base (arquitetura, lógica e estrutura: Identidade, Contexto, Regras, Skills, Tools, Agentes, formando o Agentic OS); à direita o OpenClaw roda o agente em execução (mensagens, automações, ferramentas e dashboards, monitorando, tomando ações, aprendendo e entregando resultados)" width="100%">
 </p>
 
-> **Você constrói a base. Ele roda o agente.** O erro nº 1 é pular direto para a execução sem fundação, e é por isso que o OS Coach vem primeiro.
+> **Você constrói a base. Ele roda o agente.** O erro nº 1 é pular direto para a execução sem fundação, e é por isso que o OS Agentes vem primeiro.
 
 ---
 
@@ -211,13 +209,13 @@ Não. O treinador faz todo o trabalho técnico, ele cria os arquivos e pastas pa
 Não. Tudo o que ele constrói são arquivos comuns na pasta em que você o rodou. A camada de Ferramentas conecta às suas fontes em modo somente-leitura e mantém segredos (senhas, chaves) fora da pasta. Se você marca um campo como sensível, o treinador guarda uma referência que não te identifica em vez do valor real, e nunca escreve um arquivo que diz excluir um campo e então o inclui.
 
 **Quanto custa ou o que exige?**
-Só o Claude Code. Sem chaves de API, sem dependências, sem etapa de build. Você roda `/os-coach` e vai.
+Só o Claude Code. Sem chaves de API, sem dependências, sem etapa de build. Você roda `/os-agentes` e vai.
 
 **E se uma camada ainda não se aplica a mim?**
 O treinador a marca como `não iniciada` com um motivo de uma linha, em vez de inventar trabalho para inglês ver, e segue em frente. Você nunca é empurrado a construir um agente antes de existirem as skills que ele orquestraria.
 
 **Em que isso difere de só escrever um `CLAUDE.md`?**
-Um `CLAUDE.md` é apenas a camada de Identidade. O OS Coach constrói todas as seis camadas, mantém elas coerentes, e as audita em relação ao seu objetivo ao longo do tempo. A Identidade é a alma, mas o substrato, as regras, as skills, as ferramentas e os agentes são o que fazem o OS de fato trabalhar.
+Um `CLAUDE.md` é apenas a camada de Identidade. O OS Agentes constrói todas as seis camadas, mantém elas coerentes, e as audita em relação ao seu objetivo ao longo do tempo. A Identidade é a alma, mas o substrato, as regras, as skills, as ferramentas e os agentes são o que fazem o OS de fato trabalhar.
 
 **Isso é só para empresas?**
 Não. Qualquer objetivo com bastidores funciona: uma prática de pesquisa, uma busca por emprego, uma casa, um pipeline criativo. Se você tem conhecimento espalhado e uma coisa que gostaria de poder simplesmente perguntar, serve.
@@ -226,4 +224,4 @@ Não. Qualquer objetivo com bastidores funciona: uma prática de pesquisa, uma b
 No `memory.md` da sua pasta. Toda execução o lê primeiro e o atualiza por último, então você pode parar no meio de uma construção e retomar depois, mesmo numa sessão nova, sem perder o seu lugar.
 
 **Posso editar o que ele constrói?**
-Pode, e deve. Os arquivos são seus. Edite-os direto, então rode `/os-coach audit` para ver como as suas mudanças pontuam em relação ao seu objetivo.
+Pode, e deve. Os arquivos são seus. Edite-os direto, então rode `/os-agentes audit` para ver como as suas mudanças pontuam em relação ao seu objetivo.
