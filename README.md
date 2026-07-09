@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="assets/os-agentes-banner.png" alt="OS Agentes, o Arquiteto de Sistemas de IA: você constrói a base. As seis camadas Identidade, Contexto, Regras, Skills, Tools e Agentes formando o Agentic OS, sob o lema arquitetura, lógica e estrutura. Não é sobre executar, é sobre estruturar a fundação." width="100%">
+  <img src="skills/os-agentes/assets/os-agentes-banner.png" alt="OS Agentes, o Arquiteto de Sistemas de IA: você constrói a base. As seis camadas Identidade, Contexto, Regras, Skills, Tools e Agentes formando o Agentic OS, sob o lema arquitetura, lógica e estrutura. Não é sobre executar, é sobre estruturar a fundação." width="100%">
 </p>
 
 # /os-agentes
 
-📘 **Guia visual (landing + passo a passo):** [inematds.github.io/os-agentes](https://inematds.github.io/os-agentes/)
+📘 **Guia visual (landing + passo a passo):** [inematds.github.io/os-agentes/guia](https://inematds.github.io/os-agentes/guia/)
 
 > **O que é isto, em uma frase:** uma skill do Claude Code que pega na sua mão e te guia, passo a passo, na construção do seu próprio **OS agêntico** (um sistema operacional feito de arquivos, que entende o seu objetivo e trabalha por você), uma camada de cada vez, dentro de qualquer pasta. Você não precisa saber programar. A skill faz o trabalho técnico. Você só toma as decisões.
 
@@ -13,7 +13,7 @@ Pense nela como um treinador particular. Você diz aonde quer chegar, ela faz du
 Tudo se apoia numa única ideia: **um OS agêntico é, na maior parte, encanamento. O modelo de IA é os 20% baratos.** Você não consegue conversar com os seus dados se os bastidores estão uma bagunça. Por isso a skill arruma os bastidores primeiro, e só depois empilha capacidade em cima.
 
 <p align="center">
-  <img src="assets/os-layers.png" alt="O OS Agêntico: seis camadas construídas de baixo para cima, Identidade, depois Substrato, depois Regras, depois Skills, depois Ferramentas, depois Agentes" width="100%">
+  <img src="skills/os-agentes/assets/os-layers.png" alt="O OS Agêntico: seis camadas construídas de baixo para cima, Identidade, depois Substrato, depois Regras, depois Skills, depois Ferramentas, depois Agentes" width="100%">
 </p>
 
 > Seis camadas, construídas de baixo para cima. A Identidade é a fundação, o Substrato (os bastidores) é a maior camada, e os Agentes ficam no topo, só depois que tudo abaixo deles está firme.
@@ -53,7 +53,7 @@ Ela constrói e audita as camadas na ordem que realmente funciona.
 Você dá sempre só um pequeno passo por vez. O treinador faz 2 ou 3 perguntas em português claro, constrói os arquivos de verdade quando você responde, anota onde você está, e te aponta a próxima camada. Tudo lê e escreve num mesmo `memory.md`, então ele sempre sabe de onde você parou, mesmo sessões depois. Peça uma auditoria a qualquer momento e ele pontua o OS inteiro em relação ao seu objetivo e devolve o resultado para dentro do ciclo.
 
 <p align="center">
-  <img src="assets/agentes-loop.png" alt="O loop de treino: perguntar, construir, persistir, próximo, todos lendo e escrevendo no memory.md, com a auditoria realimentando o ciclo" width="100%">
+  <img src="skills/os-agentes/assets/agentes-loop.png" alt="O loop de treino: perguntar, construir, persistir, próximo, todos lendo e escrevendo no memory.md, com a auditoria realimentando o ciclo" width="100%">
 </p>
 
 1. **Pergunta** algumas perguntas simples sobre a camada atual, então para e espera.
@@ -80,7 +80,7 @@ Você dá sempre só um pequeno passo por vez. O treinador faz 2 ou 3 perguntas 
 ## Instalação
 
 ```bash
-cp -r os-agentes ~/.claude/skills/
+cp -r skills/os-agentes ~/.claude/skills/
 ```
 
 Depois, dentro de qualquer pasta que você queira transformar num OS:
@@ -178,9 +178,9 @@ Cada arquivo é real, ancorado no seu objetivo, e seu para guardar.
 
 ## Como ela é construída
 
-- `SKILL.md`, o controlador. É invocada só pelo usuário, guarda as regras de ouro (fale como gente, um pequeno passo por vez, quem constrói é você, nunca seja genérica, sempre persista, proteja dados sensíveis, sem travessões), as guardas, e a lógica de cada fluxo.
-- `references/layer-playbook.md`, o detalhe de treino de cada camada: uma explicação em português claro, uma analogia, as 2 ou 3 perguntas a fazer, o artefato a construir, e a checagem de pronto.
-- `references/audit-rubric.md`, como pontuar cada camada (Faltando, Iniciada, Sólida, Compondo), o teste de não-genérico, a precedência de priorização, e as checagens de campo sensível e de escrita de volta.
+- `skills/os-agentes/SKILL.md`, o controlador. É invocada só pelo usuário, guarda as regras de ouro (fale como gente, um pequeno passo por vez, quem constrói é você, nunca seja genérica, sempre persista, proteja dados sensíveis, sem travessões), as guardas, e a lógica de cada fluxo.
+- `skills/os-agentes/references/layer-playbook.md`, o detalhe de treino de cada camada: uma explicação em português claro, uma analogia, as 2 ou 3 perguntas a fazer, o artefato a construir, e a checagem de pronto.
+- `skills/os-agentes/references/audit-rubric.md`, como pontuar cada camada (Faltando, Iniciada, Sólida, Compondo), o teste de não-genérico, a precedência de priorização, e as checagens de campo sensível e de escrita de volta.
 
 As referências são carregadas só quando necessário, então o controlador fica enxuto.
 
@@ -193,7 +193,7 @@ O OS Agentes **não executa** tarefas por você no dia a dia. Ele **estrutura a 
 É aí que entra uma plataforma de execução como o **OpenClaw** (o "Jarvis" que roda os agentes): ela pega a base que você preparou aqui e a coloca para trabalhar, mensagens (WhatsApp, Telegram, e-mail), automações, ferramentas e dashboards. **O OS Agentes prepara a base; o OpenClaw roda o agente.**
 
 <p align="center">
-  <img src="assets/os-agentes-vs-openclaw.png" alt="OS Agentes versus OpenClaw: à esquerda o OS Agentes constrói a base (arquitetura, lógica e estrutura: Identidade, Contexto, Regras, Skills, Tools, Agentes, formando o Agentic OS); à direita o OpenClaw roda o agente em execução (mensagens, automações, ferramentas e dashboards, monitorando, tomando ações, aprendendo e entregando resultados)" width="100%">
+  <img src="skills/os-agentes/assets/os-agentes-vs-openclaw.png" alt="OS Agentes versus OpenClaw: à esquerda o OS Agentes constrói a base (arquitetura, lógica e estrutura: Identidade, Contexto, Regras, Skills, Tools, Agentes, formando o Agentic OS); à direita o OpenClaw roda o agente em execução (mensagens, automações, ferramentas e dashboards, monitorando, tomando ações, aprendendo e entregando resultados)" width="100%">
 </p>
 
 > **Você constrói a base. Ele roda o agente.** O erro nº 1 é pular direto para a execução sem fundação, e é por isso que o OS Agentes vem primeiro.
